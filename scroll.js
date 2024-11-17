@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
         });
     }
 
-    if(rightButton && carousel){leftButton.addEventListener('click',()=>{
+    if(leftButton && carousel){leftButton.addEventListener('click',()=>{
         carousel.scrollBy({
-            right:250,
+            left:-250,
             behavior:'smooth'
             })
         });
