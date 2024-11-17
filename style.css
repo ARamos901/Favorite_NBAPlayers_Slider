@@ -23,6 +23,7 @@ body{
     max-width: 1100px;
     width: 100%;
     position: relative;
+    
 }
 
 .wrapper i{
@@ -47,4 +48,81 @@ body{
 }
 #right{
     right: -22px;
+}
+
+.wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns:calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 50px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+}
+
+.wrapper .carousel .card, 
+.wrapper .carousel .img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    scroll-snap-align: start;
+    height: 350px;
+    list-style: none;
+    background-color: rgb(241, 114, 75);
+    cursor: pointer;
+    padding: 15px;
+    flex-direction: column;
+    border-radius: 75px;
+    
+}
+
+.img{
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+
+}
+
+.img img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 45px  rgb(5, 0, 0);
+
+}
+
+.card h2{
+    font-weight: 500;
+    font-size: large;
+    margin: 30px 0 5px;
+}
+
+span{
+    color: rgba(235, 235, 235, 0.74);
+    font-size: medium;
+}
+
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
 }
